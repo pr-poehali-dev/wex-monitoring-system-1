@@ -1,0 +1,22 @@
+CREATE TABLE servers (
+  id SERIAL PRIMARY KEY,
+  owner_id INTEGER REFERENCES users(id),
+  name VARCHAR(100) NOT NULL,
+  ip VARCHAR(255) NOT NULL,
+  description TEXT,
+  version VARCHAR(10),
+  category VARCHAR(50) DEFAULT 'Выживание',
+  vk_url TEXT,
+  discord_url TEXT,
+  telegram_url TEXT,
+  website_url TEXT,
+  image_url TEXT,
+  tags TEXT[],
+  max_online INTEGER DEFAULT 0,
+  online INTEGER DEFAULT 0,
+  premium BOOLEAN DEFAULT FALSE,
+  top_position INTEGER,
+  approved BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMP DEFAULT NOW(),
+  updated_at TIMESTAMP DEFAULT NOW()
+);
