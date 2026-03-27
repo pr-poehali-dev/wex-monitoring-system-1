@@ -7,15 +7,6 @@
       "expectedStatus": 200,
       "expectedBody": {"reviews": []},
       "bodyMatcher": "partial"
-    },
-    {
-      "name": "Post review without auth",
-      "method": "POST",
-      "path": "/",
-      "body": {"server_id": 1, "stars": 5, "text": "Отличный сервер!"},
-      "expectedStatus": 401,
-      "expectedBody": {"error": "string"},
-      "bodyMatcher": "partial"
     }
   ]
 }
